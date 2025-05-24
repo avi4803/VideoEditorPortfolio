@@ -1,0 +1,174 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes floatY {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.floating-element {
+  animation: floatY 4s ease-in-out infinite;
+}
+
+.overlay-image-wrapper {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  z-index: 50;
+}
+
+.overlay-img {
+  width: 150px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #ff00ff);
+  opacity: 30%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.overlay-image-container {
+  position: absolute;
+  top: 30%;
+  left: 90;
+  z-index: 30;
+}
+
+.overlay-img1 {
+  width: 150px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #da4ced);
+  opacity: 40%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Floating animation */
+.float {
+  animation: floatAnim 4s ease-in-out infinite;
+}
+
+@keyframes floatAnim {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.shadow-custom {
+  position: absolute;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 20px rgba(168, 85, 247, 0.5));
+}
+
+.gradient-bg {
+  background: radial-gradient(
+    ellipse at center,
+    #2d093d 0%,
+    #1f0a2a 40%,
+    #0d0d0d 100%
+  );
+}
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  overflow: hidden;
+}
+
+.purple-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px; /* Adjust to your needs */
+  background: linear-gradient(to bottom, rgba(168, 85, 247, 0.15), transparent);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* counter section styling */
+.counter-section {
+  display: flex;
+  justify-content: center;
+  gap: 15rem;
+  margin-top: 2rem;
+}
+
+.counter-box {
+  text-align: center;
+}
+
+.purple-gradient-overlay-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 8rem; /* You can tweak this height */
+  background: linear-gradient(to top, rgba(158, 78, 233, 0.298), transparent);
+  filter: blur(0%);
+  z-index: 0;
+}
+
+@media (min-width: 640px) {
+  .mobile-glow {
+    display: none;
+  }
+}
+
+.mobile-glow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 750px;
+  border-radius: 40%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.4), transparent);
+  filter: blur(60px);
+  z-index: 0;
+  opacity: 70%;
+}
+
+.left-glow {
+  left: -75px;
+}
+
+.right-glow {
+  right: -75px;
+}

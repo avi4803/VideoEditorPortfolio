@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayush Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+
+    <!-- AOS CSS for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Library -->
+  </head>
+
+  <body class="bg-black text-white font-sans">
+    <!-- Neon Cursor -->
+    <div
+      id="custom-cursor"
+      class="hidden lg:block fixed w-6 h-6 bg-purple-500 rounded-full pointer-events-none z-[9999]"
+    ></div>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background: #78138f;
+        cursor: none;
+      }
+
+      #custom-cursor {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 20px;
+        height: 20px;
+
+        background: radial-gradient(circle, #d68fff, #9f25e5);
+        clip-path: polygon(0% 0%, 100% 20%, 50% 100%);
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+
+        box-shadow: 0 0 12px rgba(196, 113, 237, 0.8),
+          0 0 30px rgba(196, 113, 237, 0.5), 0 0 60px rgba(196, 113, 237, 0.4);
+
+        filter: blur(0.3px);
+        transition: transform 0.1s ease;
+      }
+
+      .neon-text {
+        color: #8b5cf6;
+      }
+
+      .active-link {
+        background-color: rgba(128, 128, 128, 0.2); /* soft gray */
+        color: white !important;
+        background-clip: initial !important;
+      }
+      @media (max-width: 768px) {
+        .hero-section {
+          min-height: 65vh;
+        }
+      }
+
+      .video-slider::-webkit-slider-thumb {
+        background-color: #9333ea; /* purple-600 */
+        border-radius: 9999px;
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+      }
+    </style>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <!-- Purple Gradient Overlay -->
+      <div class="purple-gradient-overlay"></div>
+
+      <h1
+        class="text-3xl md:text-6xl font-extrabold leading-tight mt-2 mb-4 z-10"
+      >
+        Hi, I'm <span class="text-purple-500">Avinash Nishad</span><br />
+        I am a Proficient Video Editor
+      </h1>
+      <p class="text-gray-300 max-w-xl mb-6 z-10">
+        A passionate Editor focused on creating stunning virtual experiences.
+        Let's work together!
+      </p>
+
+      <!-- Total Likes Card -->
+      <div
+        class="absolute top-44 left-20 floating-element z-20 hidden md:block"
+      >
+        <div
+          class="bg-gray-800 text-white px-4 py-3 rounded-xl shadow-lg border border-purple-500"
+        >
+          <p class="text-sm">❤️ Total Likes</p>
+          <h3 class="text-xl font-bold text-purple-400">300k</h3>
+        </div>
+      </div>
+
+      <!-- Top Screen -->
+      <div class="fixed top-8 left-4 z-50 sm:text-lg md:text-3xl font-bold">
+        <div
+          class="px-4 py-2 rounded-lg shadow-lg font-black"
+          style="
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+              'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          "
+        >
+          CUBIX <span class="text-purple-500 ">MEDIA</span>
+        </div>
+      </div>
+      <div class="absolute top-[400px] right-0"></div>
+      <div class="overlay-image-wrapper">
+        <img src="assets/stats.png" class="overlay-img float" alt="Stats" />
+      </div>
+      <!-- Navbar -->
+
+      <nav
+        class="fixed top-8 left-1/2 transform -translate-x-1/2 z-40 bg-black px-6 sm:px-10 py-2 sm:py-3 rounded-full shadow-md border border-gray-800 max-w-[90%] sm:max-w-fit hidden sm:block"
+      >
+        <ul
+          class="flex flex-wrap justify-center space-x-3 sm:space-x-6 text-sm sm:text-base font-semibold text-white"
+        >
+          <li>
+            <a
+              href="#about"
+              class="px-3 sm:px-4 py-1 sm:py-2 rounded-full transition duration-300 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:bg-black"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#work"
+              class="px-3 sm:px-4 py-1 sm:py-2 rounded-full transition duration-300 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:bg-black"
+            >
+              Handling
+            </a>
+          </li>
+          <li>
+            <a
+              href="#feature"
+              class="px-3 sm:px-4 py-1 sm:py-2 rounded-full transition duration-300 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:bg-black"
+            >
+              Services
+            </a>
+          </li>
+          <li>
+            <a
+              href="#Contact"
+              class="px-3 sm:px-4 py-1 sm:py-2 rounded-full transition duration-300 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:bg-black"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Navbar Wrapper -->
+      <div class="sm:hidden fixed top-4 right-4 z-50">
+        <!-- Toggle Button -->
+        <button
+          id="menuToggle"
+          class="text-purple-500 text-3xl focus:outline-none shadow-lg p-2 rounded-md bg-black/70 border border-purple-500 hover:shadow-[0_0_10px_rgba(168,85,247,0.8)] transition-all duration-300"
+        >
+          &#9776;
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div
+          id="mobileMenu"
+          class="hidden flex flex-col gap-4 absolute right-0 top-12 w-32 bg-gray-700 px-6 py-5 rounded-xl shadow-lg border border-purple-600 animate-fade-in transition-all duration-500"
+        >
+          <a
+            href="#about"
+            class="text-white neon-link transition-all duration-300"
+            >About</a
+          >
+          <a
+            href="#customer"
+            class="text-white neon-link transition-all duration-300"
+            >Feedbacks</a
+          >
+          <a
+            href="#feature"
+            class="text-white neon-link transition-all duration-300"
+            >Services</a
+          >
+          <a
+            href="#Contact"
+            class="text-white neon-link transition-all duration-300"
+            >Contact</a
+          >
+        </div>
+      </div>
+
+      <style>
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: scale(0.9) translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.1s ease-out;
+        }
+        .neon-link {
+          position: relative;
+          color: #fff;
+          text-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 20px #a855f7,
+            0 0 40px #9333ea;
+        }
+
+        .neon-link:active {
+          animation: neon-tap 0.3s ease;
+        }
+
+        @keyframes neon-tap {
+          0% {
+            text-shadow: 0 0 10px #c084fc, 0 0 20px #c084fc, 0 0 30px #c084fc,
+              0 0 50px #a855f7;
+          }
+          100% {
+            text-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 20px #a855f7,
+              0 0 40px #9333ea;
+          }
+        }
+      </style>
+
+      <!-- CTA Button -->
+      <a
+        href="#projects"
+        class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-full transition z-10 mt-6 mb-2"
+      >
+        View My Work
+      </a>
+
+      <!-- Floating Arrows -->
+      <svg
+        class="absolute top-72 left-20 w-32 h-32 floating z-0 hidden md:block"
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M90,80 C30,90 80,70 80,0"
+          stroke="#A855F7"
+          stroke-width="2"
+          fill="none"
+          marker-end="url(#arrowhead1)"
+        />
+        <defs>
+          <marker
+            id="arrowhead1"
+            markerWidth="6"
+            markerHeight="6"
+            refX="5"
+            refY="3"
+            orient="auto"
+          >
+            <polygon points="0 0, 6 3, 0 6" fill="#A855F7" />
+          </marker>
+        </defs>
+      </svg>
+
+      <!-- Right Arrow (Curved from center to right-bottom) -->
+      <svg
+        class="absolute top-1/2 right-24 w-40 h-40 transform translate-y-[-50%] floating z-0 hidden md:block"
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1,0 C20,40 0,90 90,50"
+          stroke="#A855F7"
+          stroke-width="2"
+          fill="none"
+          marker-end="url(#arrowhead2)"
+        />
+        <defs>
+          <marker
+            id="arrowhead2"
+            markerWidth="6"
+            markerHeight="6"
+            refX="5"
+            refY="3"
+            orient="auto"
+          >
+            <polygon points="0 0, 6 3, 0 6" fill="#A855F7" />
+          </marker>
+        </defs>
+      </svg>
+      <!-- Views Card -->
+      <div
+        class="absolute top-72 right-0 floating-element z-70 hidden sm:block"
+      >
+        <div
+          class="bg-gray-800 text-white px-4 py-3 rounded-xl shadow-lg border border-purple-500"
+        >
+          <p class="text-sm">📊 Views (Last 6 Months)</p>
+          <img src="./assets/graph.jpg" alt="Graph" class="w-40 h-32" />
+        </div>
+      </div>
+    </section>
+
+    <div class="absolute md:w-32">
+      <div class="overlay-image-container"></div>
+      <img src="assets/stats.png" class="overlay-img1 float" alt="Stats" />
+    </div>
+
+    <section
+      id="about"
+      class="w-full bg-black text-center font-poppins"
+      style="font-family: 'Times New Roman', Times, serif"
+    >
+      <div
+        class="text-3xl sm:text-4xl max-w-3xl mx-auto pt-0 pb-2 px-3 sm:pt-4 mb-1 sm:pb-4 sm:px-6"
+      >
+        <h2
+          class="text-3xl md:text-4xl text-purple-400 mb-6"
+          data-aos="fade-up"
+        >
+          About Me
+        </h2>
+        <p
+          class="text-gray-300 sm:text-5xl text-lg font-sans-serif leading-normal px-2 overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          I'm Avinash — a passionate video editor and visual storyteller
+          based in India. With a creative eye and sharp attention to detail, I
+          bring concepts to life through captivating edits, motion graphics,and
+          many more...
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="relative py-20 px-6 bg-black overflow-hidden">
+      <!-- Plus Sign Grid Background -->
+      <div
+        class="absolute inset-0 bg-[url('/svg/plus-grid.svg')] bg-repeat bg-[length:40px_40px] opacity-10 z-0"
+      ></div>
+
+      <h2 class="text-3xl font-serif mb-4 pt-2 sm:py-1 text-center text-white">
+        Projects
+      </h2>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto transform scale-96 sm:scale-100 transition duration-300 ease-in-out"
+      >
+        <!-- Video Card 1 -->
+        <div
+          data-aos="fade-right"
+          class="bg-gray-900 border border-gray-800 rounded-2xl shadow-xl p-4 transition-transform transform hover:scale-105 hover:shadow-purple-500/40"
+        >
+          <div class="relative w-full max-w-md mx-auto video-card">
+            <video
+              class="video-element rounded-xl w-full"
+              src="./assets/Saraswati River Mystery.mp4"
+              muted
+              autoplay
+              loop
+            ></video>
+            <!-- Play/Pause button - centered -->
+
+            <!-- Centered Play/Pause Button -->
+            <button
+              class="play-pause-btn absolute inset-0 flex items-center justify-center opacity-20 hover:opacity-40 transition-opacity"
+              aria-label="Play/Pause"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-16 h-16 text-white icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <!-- Play icon -->
+                <path class="play-icon" d="M8 5v14l11-7z" />
+                <!-- Pause icon -->
+                <g class="pause-icon hidden">
+                  <path d="M10 9v6" />
+                  <path d="M14 9v6" />
+                </g>
+              </svg>
+            </button>
+
+            <!-- Seekbar -->
+            <input
+              type="range"
+              class="seekbar absolute bottom-4 left-4 right-4 w-[90%] h-1 bg-gray-700 rounded"
+              min="0"
+              value="0"
+              step="0.1"
+            />
+
+            <button
+              class="volume-toggle absolute top-4 right-4 text-white p-2 rounded-full shadow-lg"
+              aria-label="Toggle Volume"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 speaker-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16.5 12L19 14.5M19 9.5L16.5 12M5 9V15H9L14 20V4L9 9H5Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 2 -->
+        <div
+          data-aos="fade-left"
+          class="bg-gray-900 border border-gray-800 rounded-2xl shadow-xl p-4 transition-transform transform hover:scale-105 hover:shadow-purple-500/40"
+        >
+          <div class="relative w-full max-w-md mx-auto video-card">
+            <video
+              class="video-element rounded-xl w-full"
+              src="./assets/Bhav-2(1).mp4"
+              muted
+              autoplay
+              loop
+            ></video>
+            <!-- Centered Play/Pause Button -->
+            <button
+              class="play-pause-btn absolute inset-0 flex items-center justify-center opacity-20 hover:opacity-40 transition-opacity"
+              aria-label="Play/Pause"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-16 h-16 text-white icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <!-- Play icon -->
+                <path class="play-icon" d="M8 5v14l11-7z" />
+                <!-- Pause icon -->
+                <g class="pause-icon hidden">
+                  <path d="M10 9v6" />
+                  <path d="M14 9v6" />
+                </g>
+              </svg>
+            </button>
+
+            <!-- Seekbar -->
+            <input
+              type="range"
+              class="seekbar absolute bottom-4 left-4 right-4 w-[90%] h-1 bg-gray-700 rounded"
+              min="0"
+              value="0"
+              step="0.1"
+            />
+
+            <button
+              class="volume-toggle absolute top-4 right-4 text-white p-2 rounded-full shadow-lg"
+              aria-label="Toggle Volume"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 speaker-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16.5 12L19 14.5M19 9.5L16.5 12M5 9V15H9L14 20V4L9 9H5Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 3 -->
+        <div
+          data-aos="fade-right"
+          class="bg-gray-900 border border-gray-800 rounded-2xl shadow-xl p-4 transition-transform transform hover:scale-105 hover:shadow-purple-500/40"
+        >
+          <div class="relative w-full max-w-md mx-auto video-card">
+            <video
+              class="video-element rounded-xl w-full"
+              src="./assets/Sequence 35 Prob3 - Copy.mp4"
+              muted
+              autoplay
+              loop
+            ></video>
+            <!-- Centered Play/Pause Button -->
+            <button
+              class="play-pause-btn absolute inset-0 flex items-center justify-center opacity-20 hover:opacity-40 transition-opacity"
+              aria-label="Play/Pause"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-16 h-16 text-white icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <!-- Play icon -->
+                <path class="play-icon" d="M8 5v14l11-7z" />
+                <!-- Pause icon -->
+                <g class="pause-icon hidden">
+                  <path d="M10 9v6" />
+                  <path d="M14 9v6" />
+                </g>
+              </svg>
+            </button>
+
+            <!-- Seekbar -->
+            <input
+              type="range"
+              class="seekbar absolute bottom-4 left-4 right-4 w-[90%] h-1 bg-gray-700 rounded"
+              min="0"
+              value="0"
+              step="0.1"
+            />
+
+            <button
+              class="volume-toggle absolute top-4 right-4 text-white p-2 rounded-full shadow-lg"
+              aria-label="Toggle Volume"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 speaker-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16.5 12L19 14.5M19 9.5L16.5 12M5 9V15H9L14 20V4L9 9H5Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 4 -->
+        <div
+          data-aos="fade-left"
+          class="bg-gray-900 border border-gray-800 rounded-2xl shadow-xl p-4 transition-transform transform hover:scale-105 hover:shadow-purple-500/40"
+        >
+          <div class="relative w-full max-w-md mx-auto video-card">
+            <video
+              class="video-element rounded-xl w-full"
+              src="./assets/Be10x.1 2.mp4"
+              muted
+              autoplay
+              loop
+            ></video>
+            <!-- Centered Play/Pause Button -->
+            <button
+              class="play-pause-btn absolute inset-0 flex items-center justify-center opacity-20 hover:opacity-40 transition-opacity"
+              aria-label="Play/Pause"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-16 h-16 text-white icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <!-- Play icon -->
+                <path class="play-icon" d="M8 5v14l11-7z" />
+                <!-- Pause icon -->
+                <g class="pause-icon hidden">
+                  <path d="M10 9v6" />
+                  <path d="M14 9v6" />
+                </g>
+              </svg>
+            </button>
+
+            <!-- Seekbar -->
+            <input
+              type="range"
+              class="seekbar absolute bottom-4 left-4 right-4 w-[90%] h-1 bg-gray-700 rounded"
+              min="0"
+              value="0"
+              step="0.1"
+            />
+
+            <button
+              class="volume-toggle absolute top-4 right-4 text-white p-2 rounded-full shadow-lg"
+              aria-label="Toggle Volume"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 speaker-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16.5 12L19 14.5M19 9.5L16.5 12M5 9V15H9L14 20V4L9 9H5Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 5 -->
+        <div
+          data-aos="fade-right"
+          class="bg-gray-900 border border-gray-800 rounded-2xl shadow-xl p-4 transition-transform transform hover:scale-105 hover:shadow-purple-500/40"
+        >
+          <div class="relative w-full max-w-md mx-auto video-card">
+            <video
+              class="video-element rounded-xl w-full"
+              src="./assets/Trading.mp4"
+              muted
+              autoplay
+              loop
+            ></video>
+            <!-- Centered Play/Pause Button -->
+            <button
+              class="play-pause-btn absolute inset-0 flex items-center justify-center opacity-20 hover:opacity-40 transition-opacity"
+              aria-label="Play/Pause"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-16 h-16 text-white icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <!-- Play icon -->
+                <path class="play-icon" d="M8 5v14l11-7z" />
+                <!-- Pause icon -->
+                <g class="pause-icon hidden">
+                  <path d="M10 9v6" />
+                  <path d="M14 9v6" />
+                </g>
+              </svg>
+            </button>
+
+            <!-- Seekbar -->
+            <input
+              type="range"
+              class="seekbar absolute bottom-4 left-4 right-4 w-[90%] h-1 bg-gray-700 rounded"
+              min="0"
+              value="0"
+              step="0.1"
+            />
+
+            <button
+              class="volume-toggle absolute top-4 right-4 text-white p-2 rounded-full shadow-lg"
+              aria-label="Toggle Volume"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 speaker-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16.5 12L19 14.5M19 9.5L16.5 12M5 9V15H9L14 20V4L9 9H5Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 6 -->
+        <div
+          data-aos="fade-left"
+          class="bg-gray-900 border border-gray-800 rounded-2xl shadow-xl p-4 transition-transform transform hover:scale-105 hover:shadow-purple-500/40"
+        >
+          <div class="relative w-full max-w-md mx-auto video-card">
+            <video
+              class="video-element rounded-xl w-full"
+              src="./assets/Orange Labs Edit 02.mp4"
+              muted
+              autoplay
+              loop
+            ></video>
+            <!-- Centered Play/Pause Button -->
+            <button
+              class="play-pause-btn absolute inset-0 flex items-center justify-center opacity-20 hover:opacity-40 transition-opacity"
+              aria-label="Play/Pause"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-16 h-16 text-white icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <!-- Play icon -->
+                <path class="play-icon" d="M8 5v14l11-7z" />
+                <!-- Pause icon -->
+                <g class="pause-icon hidden">
+                  <path d="M10 9v6" />
+                  <path d="M14 9v6" />
+                </g>
+              </svg>
+            </button>
+
+            <!-- Seekbar -->
+            <input
+              type="range"
+              class="seekbar absolute bottom-4 left-4 right-4 w-[90%] h-1 bg-gray-700 rounded"
+              min="0"
+              value="0"
+              step="0.1"
+            />
+
+            <button
+              class="volume-toggle absolute top-4 right-4 text-white p-2 rounded-full shadow-lg"
+              aria-label="Toggle Volume"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 speaker-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16.5 12L19 14.5M19 9.5L16.5 12M5 9V15H9L14 20V4L9 9H5Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 7 -->
+        <div
+          data-aos="fade-right"
+          class="bg-gray-900 border border-gray-800 rounded-2xl shadow-xl p-4 transition-transform transform hover:scale-105 hover:shadow-purple-500/40"
+        >
+          <div class="relative w-full max-w-md mx-auto video-card">
+            <video
+              class="video-element rounded-xl w-full"
+              src="./assets/Video 1.mp4"
+              muted
+              autoplay
+              loop
+            ></video>
+            <!-- Centered Play/Pause Button -->
+            <button
+              class="play-pause-btn absolute inset-0 flex items-center justify-center opacity-20 hover:opacity-40 transition-opacity"
+              aria-label="Play/Pause"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-16 h-16 text-white icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <!-- Play icon -->
+                <path class="play-icon" d="M8 5v14l11-7z" />
+                <!-- Pause icon -->
+                <g class="pause-icon hidden">
+                  <path d="M10 9v6" />
+                  <path d="M14 9v6" />
+                </g>
+              </svg>
+            </button>
+
+            <!-- Seekbar -->
+            <input
+              type="range"
+              class="seekbar absolute bottom-4 left-4 right-4 w-[90%] h-1 bg-gray-700 rounded"
+              min="0"
+              value="0"
+              step="0.1"
+            />
+
+            <button
+              class="volume-toggle absolute top-4 right-4 text-white p-2 rounded-full shadow-lg"
+              aria-label="Toggle Volume"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 speaker-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16.5 12L19 14.5M19 9.5L16.5 12M5 9V15H9L14 20V4L9 9H5Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 8 -->
+        <div
+          data-aos="fade-left"
+          class="bg-gray-900 border border-gray-800 rounded-2xl shadow-xl p-4 transition-transform transform hover:scale-105 hover:shadow-purple-500/40"
+        >
+          <div class="relative w-full max-w-md mx-auto video-card">
+            <video
+              class="video-element rounded-xl w-full"
+              src="./assets/0310(3).mp4"
+              muted
+              autoplay
+              loop
+            ></video>
+            <!-- Centered Play/Pause Button -->
+            <button
+              class="play-pause-btn absolute inset-0 flex items-center justify-center opacity-20 hover:opacity-40 transition-opacity"
+              aria-label="Play/Pause"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-16 h-16 text-white icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <!-- Play icon -->
+                <path class="play-icon" d="M8 5v14l11-7z" />
+                <!-- Pause icon -->
+                <g class="pause-icon hidden">
+                  <path d="M10 9v6" />
+                  <path d="M14 9v6" />
+                </g>
+              </svg>
+            </button>
+
+            <!-- Seekbar -->
+            <input
+              type="range"
+              class="seekbar absolute bottom-4 left-4 right-4 w-[90%] h-1 bg-gray-700 rounded"
+              min="0"
+              value="0"
+              step="0.1"
+            />
+
+            <button
+              class="volume-toggle absolute top-4 right-4 text-white p-2 rounded-full shadow-lg"
+              aria-label="Toggle Volume"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 speaker-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16.5 12L19 14.5M19 9.5L16.5 12M5 9V15H9L14 20V4L9 9H5Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 9 -->
+        <div
+          data-aos="fade-right"
+          class="bg-gray-900 border border-gray-800 rounded-2xl shadow-xl p-4 transition-transform transform hover:scale-105 hover:shadow-purple-500/40"
+        >
+          <div class="relative w-full max-w-md mx-auto video-card">
+            <video
+              class="video-element rounded-xl w-full"
+              src="./assets/Video 2.mp4"
+              muted
+              autoplay
+              loop
+            ></video>
+            <!-- Centered Play/Pause Button -->
+            <button
+              class="play-pause-btn absolute inset-0 flex items-center justify-center opacity-20 hover:opacity-40 transition-opacity"
+              aria-label="Play/Pause"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-16 h-16 text-white icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <!-- Play icon -->
+                <path class="play-icon" d="M8 5v14l11-7z" />
+                <!-- Pause icon -->
+                <g class="pause-icon hidden">
+                  <path d="M10 9v6" />
+                  <path d="M14 9v6" />
+                </g>
+              </svg>
+            </button>
+
+            <!-- Seekbar -->
+            <input
+              type="range"
+              class="seekbar absolute bottom-4 left-4 right-4 w-[90%] h-1 bg-gray-700 rounded"
+              min="0"
+              value="0"
+              step="0.1"
+            />
+
+            <button
+              class="volume-toggle absolute top-4 right-4 text-white p-2 rounded-full shadow-lg"
+              aria-label="Toggle Volume"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 speaker-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16.5 12L19 14.5M19 9.5L16.5 12M5 9V15H9L14 20V4L9 9H5Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="work" class="py-28 bg-[#0d0d0d] text-white">
+      <h2
+        class="text-center text-5xl font-serif mb-20 tracking-tight"
+        data-aos="fade-up"
+        data-aos-once="false"
+      >
+        How It Works
+      </h2>
+
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-14 px-8"
+      >
+        <!-- Card 1 -->
+        <div
+          class="bg-[#131313] border border-gray-800 rounded-3xl p-12 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-purple-400/30"
+          data-aos="fade-right"
+          data-aos-once="false"
+        >
+          <div
+            class="flex items-center justify-center w-20 h-20 rounded-full mb-8"
+          >
+            <img
+              src="./assets/icons8-unity-50.png"
+              alt="Submit Icon"
+              class="w-12 h-12"
+            />
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Submit Your Recordings</h3>
+          <p class="text-base text-gray-400 leading-relaxed">
+            Simply record your content and upload it — we’ll handle the rest
+            from editing to polish.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-[#131313] border border-gray-800 rounded-3xl p-12 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-purple-400/30"
+          data-aos="fade-up"
+          data-aos-once="false"
+        >
+          <div
+            class="flex items-center justify-center w-20 h-20 rounded-full mb-8"
+          >
+            <img
+              src="./assets/icons8-cydia-50.png"
+              alt="Perfected Icon"
+              class="w-12 h-12"
+            />
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Your Video, Perfected</h3>
+          <p class="text-base text-gray-400 leading-relaxed">
+            Our editors create a visual masterpiece tailored to your brand’s
+            unique identity.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-[#131313] border border-gray-800 rounded-3xl p-2 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-purple-400/30"
+          data-aos="fade-left"
+          data-aos-once="false"
+        >
+          <div
+            class="flex sm:w-36 ml-10 sm:ml-16 md:ml-0 items-center justify-center w-20 h-20 rounded-full mb-8"
+            style="margin-top: 40px"
+          >
+            <img
+              src="./assets/icons8-fingerprint-50.png"
+              alt="Reach Icon"
+              class="w-12 h-12"
+            />
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Maximize Your Reach</h3>
+          <p class="text-base text-gray-400 leading-relaxed">
+            We help amplify your content across platforms to maximize engagement
+            and visibility.
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="fade-line"></div>
+
+    <style>
+      .fade-line {
+        height: 1px;
+        width: 100%;
+        margin: 3rem;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #fd98ff,
+          transparent
+        );
+      }
+    </style>
+
+    <section
+      id="customer"
+      class="min-h-screen sm:min-h-[100vh] bg-gradient-to-b text-white gradient-bg w-full overflow-hidden relative"
+    >
+      <div
+        class="absolute inset-0 sm:hidden bg-gradient-to-b from-purple-500/40 via-purple-700/20 to-transparent z-0"
+      ></div>
+
+      <div class="text-center max-w-4xl mx-auto px-6">
+        <h3 class="font-sans text-4xl text-purple-400 uppercase mb-3">
+          ✱ Customer Story
+        </h3>
+        <h2 class="text-3xl sm:text-5xl font-serif leading-tight mb-16">
+          Game changer! Helped me connect with my audience like never before
+        </h2>
+      </div>
+      <!-- Left Glow -->
+      <div class="mobile-glow left-glow"></div>
+
+      <!-- Right Glow -->
+      <div class="mobile-glow right-glow"></div>
+
+      <!-- Testimonials -->
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-6 text-white text-center"
+      >
+        <!-- Testimonial 1 -->
+        <div
+          class="opacity-70 transform scale-95 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="400"
+          data-aos-once="false"
+        >
+          <p class="text-gray-300 text-base mb-6 overflow-hidden">
+            "We collaborated with him for a series of Instagram and YouTube ad
+            edits for our skincare line. The videos came out beautifully —
+            crisp, elegant, and visually aligned with our brand tone. He really
+            understood our aesthetic and delivered on-point content every single
+            time."
+          </p>
+          <img
+            src="./assets/download.png"
+            class="w-20 h-20 rounded-full mx-auto mb-2 "
+            alt="Oriflame"
+          />
+          <h4 class="text-lg font-semibold">Oriflame</h4>
+          <p class="text-sm text-gray-400">(Skincare)</p>
+        </div>
+
+        <!-- Testimonial 2 - Highlighted Center -->
+        <div
+          class="transform scale-105 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="600"
+          data-aos-once="false"
+        >
+          <p class="text-gray-100 text-lg font-extralight mb-6">
+            "Incredible editing skills. I sent over a bunch of raw footage for a
+            brand video, and he turned it into something polished and
+            professional. Communication was smooth, and he was open to feedback.
+            One of the best freelance editors I’ve worked with."
+          </p>
+          <img
+            src="./assets/testi2.jpeg"
+            class="w-20 h-20 rounded-full mx-auto mb-2"
+            alt="Ronson Moses"
+          />
+          <h4 class="text-xl font-bold">James Carter</h4>
+          <p class="text-sm text-gray-400">(Media Management)</p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div
+          class="opacity-70 transform scale-95 transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="800"
+          data-aos-once="false"
+        >
+          <p class="text-gray-300 text-base font-thin mb-6">
+            "We needed high-quality explainer videos for our health awareness
+            campaign, and his editing made a huge difference. The information
+            was presented clearly, with clean visuals and a professional finish.
+            Very responsive and committed to timelines. A reliable creative
+            partner."
+          </p>
+          <img
+            src="./assets/LOGO gap-01.png"
+            class="w-20 h-20 rounded-full mx-auto mb-2"
+            alt="Benjamin Goresky"
+          />
+          <h4 class="text-lg font-semibold">Orange Lab</h4>
+          <p class="text-sm text-gray-400">(Health)</p>
+        </div>
+      </div>
+    </section>
+    <div class="fade-line"></div>
+
+    <style>
+      .fade-line {
+        height: 1px;
+        width: 100%;
+        margin: 3rem 0;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #fd98ff,
+          transparent
+        );
+      }
+    </style>
+
+    <section
+      class="counter-section sm:min-h-[100vh] text-white py-12 md:py-20 w-full overflow-hidden relative gradient-bg sm:gradient-bg"
+    >
+      <style>
+        @media (max-width: 639px) {
+          .gradient-bg {
+            background: none !important;
+          }
+        }
+      </style>
+      <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+        <!-- Counter Box 1 -->
+        <div class="counter-box text-center px-4">
+          <h2 class="text-6xl font-serif text-white counter" data-target="500">
+            0
+          </h2>
+          <p class="text-gray-400 mt-2">Videos Created</p>
+        </div>
+
+        <!-- Separator -->
+        <div
+          class="flex flex-col md:flex-row h-16 w-px bg-gradient-to-b from-transparent via-gray-500 to-transparent opacity-70"
+        ></div>
+
+        <!-- Counter Box 2 -->
+        <div class="counter-box text-center px-4">
+          <h2 class="text-6xl font-serif text-white counter" data-target="7">
+            0
+          </h2>
+          <p class="text-gray-400 mt-2">Million+ Views</p>
+        </div>
+
+        <!-- Separator -->
+        <div
+          class="flex flex-col md:flex-row h-16 w-px bg-gradient-to-b from-transparent via-gray-500 to-transparent opacity-70"
+        ></div>
+
+        <!-- Counter Box 3 -->
+        <div class="counter-box text-center px-4">
+          <h2
+            class="text-6xl font-serif text-white counter"
+            data-target="17415"
+          >
+            0
+          </h2>
+          <p class="text-gray-400 mt-2">Total Viewcount (hrs)</p>
+        </div>
+      </div>
+      <!-- Left Glow -->
+      <div class="mobile-glow left-glow"></div>
+
+      <!-- Right Glow -->
+      <div class="mobile-glow right-glow"></div>
+    </section>
+
+    <div class="fade-line1 block sm:hidden"></div>
+
+    <!-- Features Section -->
+    <section id="feature" class="bg-black text-white py-20 px-6">
+      <div
+        class="bg-[#131313] border border-black rounded-3xl p-2 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-purple-400/30"
+      >
+        <div id="with-us" class="max-w-6xl mx-auto text-center">
+          <p
+            class="text-purple-500 font-serif uppercase tracking-wide mb-2 text-4xl"
+          >
+            ✺ why work with us
+          </p>
+
+          <h2 class="text-4xl md:text-5xl font-light mb-24">
+            We're simply the best at what we do
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-12 transform scale-125">
+            <!-- Feature 1 -->
+            <div
+              class="flex flex-col items-center text-center"
+              data-aos="fade-left"
+              data-aos-once="false"
+            >
+              <div class="bg-[#111111] py-3 pt-3 rounded-2xl shadow-lg">
+                <img
+                  src="/assets/growth.png"
+                  class="w-16 mx-auto mb-4"
+                  alt="Growth Icon"
+                />
+                <p class="text-purple-400 text-sm font-medium mb-1">Growth</p>
+                <h3 class="text-base sm:text-xl font-semibold mb-2">
+                  Grow within Months
+                </h3>
+                <p class="text-gray-400 text-sm overflow-hidden">
+                  We help you increase your viewership count within a set
+                  period.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div
+              class="flex flex-col items-center text-center scale-105"
+              data-aos="fade-up"
+              data-aos-once="false"
+            >
+              <div
+                class="bg-[#111111] p-6 rounded-2xl shadow-xl border-gray-600 border-purple-500/20"
+              >
+                <img
+                  src="/assets/lightning.png"
+                  class="w-16 mx-auto mb-4"
+                  alt="Design Icon"
+                />
+                <p class="text-purple-400 text-sm font-medium mb-1">New</p>
+                <h3 class="text-xl font-semibold mb-2">Custom Design</h3>
+                <p class="text-gray-400 text-sm">
+                  Custom elements built from scratch to cater your specific
+                  needs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div
+              class="flex flex-col items-center text-center"
+              data-aos="fade-right"
+              data-aos-once="false"
+            >
+              <div class="bg-[#111111] p-6 rounded-2xl shadow-lg">
+                <img
+                  src="/assets/pie.png"
+                  class="w-16 mx-auto mb-4"
+                  alt="Growth Method Icon"
+                />
+                <p class="text-purple-400 text-sm font-medium mb-1">Strategy</p>
+                <h3 class="text-xl font-semibold mb-2">
+                  Proven Growth Methods
+                </h3>
+                <p class="text-gray-400 text-sm">
+                  Elevate your personal brand to new heights with our unique
+                  strategies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Left Disc -->
+    </section>
+
+    <div class="fade-line1"></div>
+
+    <style>
+      .fade-line1 {
+        height: 1px;
+        width: 100%;
+        margin: 0rem 0;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #fd98ff,
+          transparent
+        );
+      }
+    </style>
+
+    <section
+      id="Contact"
+      class="relative bg-black py-10 px-6 text-center text-white overflow-hidden"
+    >
+      <div class="absolute md:w-32">
+        <div class="overlay-image-container"></div>
+        <img
+          src="assets/stats.png"
+          class="overlay-img1 w-40 h-40 rounded-full float"
+          alt="Stats"
+        />
+      </div>
+      <!-- Purple Gradient Background Glow (Bottom) -->
+      <div
+        class="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-purple-600/20 via-purple-500/10 to-transparent blur-3xl z-0"
+      ></div>
+
+      <!-- Actual Content -->
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <h2 class="text-purple-400 text-3xl font-semibold mb-3 animate-pulse">
+          Let's connect
+        </h2>
+        <h3
+          class="text-3xl sm:text-6xl font-serif mb-6 text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.7)]"
+        >
+          Ready to take your content to the next level?
+        </h3>
+        <p class="text-gray-400 mb-10 text-lg">
+          Feel free to reach out on WhatsApp or via email. I’ll respond as soon
+          as possible!
+        </p>
+
+        <div
+          class="flex flex-col md:flex-row justify-center gap-6 items-center"
+        >
+          <!-- Email Button -->
+          <a
+            href="mailto:avinashn157@gmail.com"
+            class="px-6 py-3 text-white font-medium rounded-full border border-purple-500 bg-black hover:bg-purple-900 hover:shadow-[0_0_25px_#a855f7] transition-all duration-300 flex items-center gap-3"
+          >
+            <svg
+              class="w-5 h-5 text-purple-400"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16 12H8m8 0a4 4 0 100-8 4 4 0 000 8zm0 0a4 4 0 00-8 0m8 0v2a4 4 0 01-8 0v-2"
+              />
+            </svg>
+            avinashn157@gmail.com
+          </a>
+
+          <!-- WhatsApp Button -->
+          <a
+            href="https://wa.me/918756754803"
+            target="_blank"
+            class="px-6 py-3 text-white font-medium rounded-full border border-green-500 bg-black hover:bg-green-900 hover:shadow-[0_0_25px_#22c55e] transition-all duration-300 flex items-center gap-3"
+          >
+            <svg
+              class="w-5 h-5 text-green-400"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20.52 3.48A11.86 11.86 0 0012.04 0C5.52 0 0 5.52 0 12a11.89 11.89 0 001.73 6.2L0 24l6.06-1.59A11.85 11.85 0 0012.04 24c6.52 0 11.96-5.52 11.96-12a11.87 11.87 0 00-3.48-8.52zM12.04 22a9.82 9.82 0 01-5.17-1.45l-.37-.22-3.6.95.96-3.51-.24-.37A9.87 9.87 0 012.04 12c0-5.5 4.48-10 10-10s10 4.5 10 10-4.48 10-10 10z"
+              />
+            </svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- Footer Inside Section -->
+        <footer class="mt-16">
+          <div class="flex flex-col items-center gap-4">
+            <a
+              href="https://www.instagram.com/__avi__0408/"
+              target="_blank"
+              class="flex items-center gap-2 text-gray-300 hover:text-white hover:underline transition-colors duration-300"
+            >
+              <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+                <path
+                  d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5c0 3.3-2.45 5.75-5.75 5.75h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.25-2.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"
+                />
+              </svg>
+              Instagram
+            </a>
+            <p class="text-purple-500 text-sm mt-6">© 2025 AYUSH</p>
+          </div>
+        </footer>
+      </div>
+    </section>
+    <div class="relative bg-black text-center text-white overflow-hidden h-40">
+      <!-- Gradient overlay from bottom -->
+      <div
+        class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t purple-gradient-overlay-bottom"
+      ></div>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1800,
+        easing: "ease-in-out",
+        mirror: true,
+        once: false,
+      });
+    </script>
+
+    <script>
+      const cursor = document.querySelector("#custom-cursor");
+
+      document.addEventListener("mousemove", (e) => {
+        // Use pageX and pageY for full scroll support
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+      });
+
+      let x = 0,
+        y = 0;
+      let targetX = 0,
+        targetY = 0;
+
+      document.addEventListener("mousemove", (e) => {
+        targetX = e.pageX;
+        targetY = e.pageY;
+      });
+
+      function animateCursor() {
+        x += (targetX - x) * 0.91;
+        y += (targetY - y) * 0.91;
+
+        cursor.style.left = `${x}px`;
+        cursor.style.top = `${y}px`;
+
+        requestAnimationFrame(animateCursor);
+      }
+
+      animateCursor();
+    </script>
+
+    <!-- script for brighter links on navbar -->
+    <script>
+      const navLinks = document.querySelectorAll("nav a");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          navLinks.forEach((el) => el.classList.remove("active-link"));
+          this.classList.add("active-link");
+        });
+      });
+    </script>
+
+    <!-- script for mobile navbar -->
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+
+        // Toggle icon between hamburger and X
+        if (mobileMenu.classList.contains("hidden")) {
+          menuToggle.innerHTML = "&#9776;"; // ☰
+        } else {
+          menuToggle.innerHTML = "&times;"; // ✖
+        }
+      });
+    </script>
+    <!-- autoclose munu on tapping outside -->
+    <script>
+      document.addEventListener("click", (e) => {
+        const toggleBtn = document.getElementById("menuToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        if (!toggleBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.add("hidden");
+          menuToggle.innerHTML = "&#9776;";
+        }
+      });
+    </script>
+
+    <!-- script for seekbar,play/pause button -->
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".video-card").forEach((card) => {
+          const video = card.querySelector(".video-element");
+          const playPauseBtn = card.querySelector(".play-pause-btn");
+          const seekbar = card.querySelector(".seekbar");
+          const playIcon = card.querySelector(".play-icon");
+          const pauseIcon = card.querySelector(".pause-icon");
+
+          if (!video || !playPauseBtn || !seekbar) return; // just in case
+
+          // Reset video to beginning when it ends
+          video.addEventListener("ended", () => {
+            video.currentTime = 0;
+            video.play();
+          });
+
+          // Update seekbar while video plays
+          video.addEventListener("timeupdate", () => {
+            seekbar.max = video.duration;
+            seekbar.value = video.currentTime;
+          });
+
+          // Seek when user changes slider
+          seekbar.addEventListener("input", () => {
+            video.currentTime = seekbar.value;
+          });
+
+          // Toggle play/pause
+          playPauseBtn.addEventListener("click", () => {
+            if (video.paused) {
+              video.play();
+              playIcon.classList.add("hidden");
+              pauseIcon.classList.remove("hidden");
+            } else {
+              video.pause();
+              playIcon.classList.remove("hidden");
+              pauseIcon.classList.add("hidden");
+            }
+          });
+        });
+      });
+    </script>
+
+    <script src="/js/video-controller.js"></script>
+    <script src="/js/counter.js"></script>
+  </body>
+</html>
